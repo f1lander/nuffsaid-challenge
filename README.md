@@ -2,6 +2,33 @@
 
 ![Alt Text](https://media.giphy.com/media/4obdC3HAjFPtCkjCxX/giphy.gif?cid=790b7611c43b27f81fe60d54b6d0617e49c8758c02e35002&rid=giphy.gif&ct=g)
 
+## Instructions
+
+```
+yarn install
+yarn start
+```
+
+### notes
+
+this challenge I made in around 90 minutes, I'm missing test and use contextApi hooks, I already know how to implementing and how to use it, I can proceed to polish this but need more time but I guess in matter to show my knowledge this can be just a sneak peak.
+
+### who am I?
+
+Edax Ucles, Fullstack JS developer
+
+[![Contact me on Codementor](https://www.codementor.io/m-badges/edaxfilanderucleshernandez/im-a-cm-b.svg)](https://www.codementor.io/@edaxfilanderucleshernandez?refer=badge)
+
+Founder of
+https://chekku.co
+
+Github
+https://github.com/f1lander
+
+LinkedIn
+https://www.linkedin.com/in/edax-ucl%C3%A9s-aa597657/
+## ----------------------------------------------------------------------------------------
+## Original Instructions Below
 
 This code challenge tests your skills in react.js (using Typescript), testing and modular design.
 The purpose of the application is to correctly render a stream of messages coming from an api. Different messages will be coded different colors and require slightly different rendering. The rules are described in detail below.
