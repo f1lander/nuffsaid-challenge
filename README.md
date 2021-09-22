@@ -1,5 +1,8 @@
 ## React Coding Challenge
 
+![Alt Text](https://media.giphy.com/media/4obdC3HAjFPtCkjCxX/giphy.gif?cid=790b7611c43b27f81fe60d54b6d0617e49c8758c02e35002&rid=giphy.gif&ct=g)
+
+
 This code challenge tests your skills in react.js (using Typescript), testing and modular design.
 The purpose of the application is to correctly render a stream of messages coming from an api. Different messages will be coded different colors and require slightly different rendering. The rules are described in detail below.
 
