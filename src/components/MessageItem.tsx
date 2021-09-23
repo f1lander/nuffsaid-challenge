@@ -12,7 +12,7 @@ const Container = styled(Grid)<{ bg: string }>`
 `;
 
 export const MessageItem: React.FC<MessageProps> = (props): JSX.Element => {
-  const { message, priority } = props;
+  const { message, priority, onClear } = props;
 
   const bgColor = PriorityColor[Priority[priority]];
 
@@ -20,7 +20,7 @@ export const MessageItem: React.FC<MessageProps> = (props): JSX.Element => {
     <Container justifyContent="flex-end" direction="column" bg={bgColor}>
       <Typography>{message}</Typography>
 
-      <Button>Clear</Button>
+      <Button onClick={() => onClear(message)}>Clear</Button>
     </Container>
   );
 };

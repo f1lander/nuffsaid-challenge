@@ -15,7 +15,11 @@ const App: React.FC<{}> = () => {
     });
     return cleanUp;
   }, [setMessages]);
-  debugger;
+
+  const handleOnClearMessage = (message: string) => {
+    setMessages(messages.filter((msg) => msg.message !== message));
+  };
+
   return (
     <div>
       <AppTopBar />
@@ -26,7 +30,11 @@ const App: React.FC<{}> = () => {
               {messages
                 ?.filter((item) => item.priority === Priority.Error)
                 .map?.((msg) => (
-                  <MessageItem {...msg} key={msg?.message}>
+                  <MessageItem
+                    {...msg}
+                    key={msg?.message}
+                    onClear={handleOnClearMessage}
+                  >
                     {msg?.message}
                   </MessageItem>
                 ))}
@@ -37,7 +45,11 @@ const App: React.FC<{}> = () => {
               {messages
                 ?.filter((item) => item.priority === Priority.Warn)
                 .map?.((msg) => (
-                  <MessageItem {...msg} key={msg?.message}>
+                  <MessageItem
+                    {...msg}
+                    key={msg?.message}
+                    onClear={handleOnClearMessage}
+                  >
                     {msg?.message}
                   </MessageItem>
                 ))}
@@ -48,7 +60,11 @@ const App: React.FC<{}> = () => {
               {messages
                 ?.filter((item) => item.priority === Priority.Info)
                 .map?.((msg) => (
-                  <MessageItem {...msg} key={msg?.message}>
+                  <MessageItem
+                    {...msg}
+                    key={msg?.message}
+                    onClear={handleOnClearMessage}
+                  >
                     {msg?.message}
                   </MessageItem>
                 ))}

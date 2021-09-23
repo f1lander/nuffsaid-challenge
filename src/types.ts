@@ -13,4 +13,5 @@ export const PriorityColor: any = {
 export type MessageProps = {
   priority: Priority;
   message: string;
+  onClear(message: string): void;
 };
