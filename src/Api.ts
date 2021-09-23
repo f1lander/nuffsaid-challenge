@@ -1,12 +1,8 @@
 import random from 'lodash/random';
 import faker from 'faker';
 import { Observable } from 'rxjs';
-import { Priority } from './types';
+import { Message, Priority } from './types';
 
-export interface Message {
-  message: string;
-  priority: Priority;
-}
 
 const observable = new Observable<Message>(subscriber => {
   const generate = () => {

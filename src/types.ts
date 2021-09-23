@@ -15,3 +15,8 @@ export type MessageProps = {
   message: string;
   onClear(message: string): void;
 };
+
+export interface Message {
+  message: string;
+  priority: Priority;
+}

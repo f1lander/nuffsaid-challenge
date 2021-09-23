@@ -1,29 +1,52 @@
 import React, { useEffect, useState } from "react";
-import { Grid, Box } from "@mui/material";
-import generateMessage, { Message } from "./Api";
+import { Grid, Box, Button } from "@mui/material";
+import generateMessage from "./Api";
 import { MessageContainer } from "./containers/MessageContainer";
-import { Priority } from "./types";
+import { Priority, Message } from "./types";
 import { MessageItem } from "./components/MessageItem";
 import AppTopBar from "./components/AppTopBar";
 
 const App: React.FC<{}> = () => {
   const [messages, setMessages] = useState<Message[]>([]);
+  const [stopMessages, setStopMessages] = useState<boolean>(false);
 
   useEffect(() => {
-    const cleanUp = generateMessage((message: Message) => {
-      setMessages((oldMessages) => [...oldMessages, message]);
-    });
-    return cleanUp;
-  }, [setMessages]);
+    if (!stopMessages) {
+      const cleanUp = generateMessage((message: Message) => {
+        setMessages((oldMessages) => [...oldMessages, message]);
+      });
+      return cleanUp;
+    }
+  }, [setMessages, stopMessages]);
 
-  const handleOnClearMessage = (message: string) => {
-    setMessages(messages.filter((msg) => msg.message !== message));
+  const handleOnClearMessage = (message?: string) => {
+    if (!message) {
+      setMessages([]);
+    } else {
+      setMessages(messages.filter((msg) => msg.message !== message));
+    }
+  };
+
+  const handleOnStop = () => {
+    setStopMessages(true);
   };
 
   return (
     <div>
       <AppTopBar />
-      <Box mt={10}>
+      <Grid container justifyContent="center" spacing={2} mt={10}>
+        <Grid item>
+          <Button onClick={() => handleOnStop()} variant="contained">
+            Stop
+          </Button>
+        </Grid>
+        <Grid item>
+          <Button variant="outlined" onClick={() => handleOnClearMessage()}>
+            Clear
+          </Button>
+        </Grid>
+      </Grid>
+      <Box mt={5}>
         <Grid spacing={5} container justifyContent="center">
           <Grid item>
             <MessageContainer title="Error Type 1">
