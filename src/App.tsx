@@ -20,7 +20,7 @@ const App: React.FC<{}> = () => {
 
   const handleOnClearMessage = (message?: string) => {
     if (!message) {
-      setMessages([]);inmediatley
+      setMessages([]);
     } else {
       setMessages(messages.filter((msg) => msg.message !== message));
     }
