@@ -12,10 +12,9 @@ const App: React.FC<{}> = () => {
 
   useEffect(() => {
     if (!stopMessages) {
-      const cleanUp = generateMessage((message: Message) => {
-        setMessages((oldMessages) => [...oldMessages, message]);
-      });
-      return cleanUp;
+      return generateMessage((message: Message) =>
+        setMessages((oldMessages) => [...oldMessages, message])
+      );
     }
   }, [setMessages, stopMessages]);
 
