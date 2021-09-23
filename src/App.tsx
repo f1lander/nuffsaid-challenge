@@ -27,8 +27,8 @@ const App: React.FC<{}> = () => {
     }
   };
 
-  const handleOnStop = () => {
-    setStopMessages(true);
+  const handleOnStop = (value: boolean) => {
+    setStopMessages(value);
   };
 
   return (
@@ -36,8 +36,11 @@ const App: React.FC<{}> = () => {
       <AppTopBar />
       <Grid container justifyContent="center" spacing={2} mt={10}>
         <Grid item>
-          <Button onClick={() => handleOnStop()} variant="contained">
-            Stop
+          <Button
+            onClick={() => handleOnStop(!stopMessages)}
+            variant="contained"
+          >
+            {stopMessages ? "Start" : "Stop"}
           </Button>
         </Grid>
         <Grid item>
